@@ -93,7 +93,7 @@ app.post("/aluno", (req, res) => {
 
 /**
  * @swagger
- * /aluno:
+ * /aluno/{id}:
  *  put:
  *      summary: Atualização de aluno
  *      tags: [Alunos]
