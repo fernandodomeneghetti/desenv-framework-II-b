@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD com JWT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 750px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 {
+      text-align: center;
+    }
+    form, #crud-section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 8px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    .edit-btn { color: blue; cursor: pointer; }
+    .delete-btn { color: red; cursor: pointer; }
+    #logout-btn {
+      float: right;
+      background: #c00;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>CRUD com Autenticação JWT</h1>
+
+  <!-- Login -->
+  <form id="login-form">
+    <h2>Login</h2>
+    <input type="text" id="email" placeholder="E-mail" required>
+    <input type="password" id="senha" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+    <p id="login-msg"></p>
+  </form>
+
+  <!-- CRUD -->
+  <section id="crud-section" style="display:none;">
+    <button id="logout-btn">Sair</button>
+    <h2>Gerenciar Alunos</h2>
+
+    <form id="form-aluno">
+      <input type="hidden" id="id">
+      <input type="text" id="nome" placeholder="Nome" required>
+      <input type="text" id="ra" placeholder="RA" required>
+      <button type="submit">Salvar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>RA</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-alunos"></tbody>
+    </table>
+  </section>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
